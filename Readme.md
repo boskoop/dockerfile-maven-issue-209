@@ -1,8 +1,10 @@
-# `${project.build.directory}` in dockerfile-maven-plugin
-
-## Issue
+`project.build.directory` in dockerfile-maven-plugin
+===
 
 See: https://github.com/spotify/dockerfile-maven/issues/209
+
+Issue
+---
 
 Use the following commands in order to reproduce the issue:
 ```
@@ -38,7 +40,8 @@ Caused by: com.spotify.docker.client.exceptions.DockerException: ADD failed: sta
 [ERROR] ADD failed: stat /var/lib/docker/tmp/docker-builderXXXXXXXXX/<path-to-project>/target/dockerfile-maven-issue-209-1.0-SNAPSHOT.jar: no such file or directory
 ```
 
-## Workaround
+Workaround
+---
 
 If you replace the `JAR_FILE` argument in the pom.xml with a hardcoded `target` folder, the build runs just fine:
 
